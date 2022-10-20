@@ -8,7 +8,7 @@ Connect and discuss conferences, meetups, and hackathons around the world with t
 ### Quick Start
 
 * [GitHub Community Guidelines](https://docs.github.com/en/site-policy/github-terms/github-community-guidelines)
-* [Discussions & Product Feedback](https://github.com/orgs/community/discussions) 
+* [GitHub Community - Product Questions + Feedback](https://github.com/orgs/community/discussions) 
 * [GitHub Universe 2022](https://githubuniverse.com/)
    * [Virtual Agenda](https://githubuniverse.com/events/detail/virtual-schedule)
    * [On-site Agenda](https://githubuniverse.com/events/detail/on-site-schedule)
