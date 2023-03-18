@@ -1,7 +1,7 @@
-<img width="957" alt="GH" src="https://user-images.githubusercontent.com/49915749/196942213-b763661c-63d8-40df-8ef8-47759561dddf.png">
+<img width="900" height="300" alt="GH" src="https://user-images.githubusercontent.com/49915749/196942213-b763661c-63d8-40df-8ef8-47759561dddf.png">
 
 
-# GitHub Events
+<h1 align="center"> GitHub Events</h1>
 
 Connect and discuss conferences, meetups, and hackathons around the world with the GitHub Community.
 
