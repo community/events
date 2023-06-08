@@ -38,19 +38,45 @@ jobs:
         if: ${{ steps.check_employee.outputs.result == 'false' }}
         uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const labels = [
-              'fixed',
+            const labelsToRemove = [
+              'in backlog',
               'more information needed',
-              'in backlog'
+              'fixed'
             ];
 
             console.log(context.payload);
 
-            labels.forEach(label => {
+            labelsToRemove.forEach(label => {
               if (context.payload.label.name === label) {
                 return true;
 
                 // Remove labels
               }
             });
+            
+      - name: Remove label
+        if: ${{ steps.check_employee.outputs.result == 'false' && steps.check_labels.outputs.returnValue == true }}
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const labelsToRemove = [
+              'in backlog',
+              'more information needed',
+              'fixed'
+            ];
+
+            const removeLabel = async () => {
+              for (const label of labelsToRemove) {
+                await github.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  name: label
+                });
+              }
+            };
+
+            removeLabel();
