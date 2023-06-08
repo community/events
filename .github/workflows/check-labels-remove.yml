@@ -1,8 +1,8 @@
-name: Check labels
+name: Remove Governed Labels
 
 on:
   discussion:
-    types: [labeled]
+    types: [labeled, created]
 
 jobs:
   check_labels:
@@ -35,7 +35,7 @@ jobs:
       
       - name: Check labels
         id: check_labels
-        if: ${{ steps.check_employee.outputs.result == 'false' }}
+        if: ${{ steps.check_employee.outputs.result == 'true' }}
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -49,7 +49,7 @@ jobs:
             console.log(context.payload);
 
             labelsToRemove.forEach(label => {
-              if (context.payload.label.name === label) {
+              if (context.payload.label.name === labelsToRemove) {
                 return true;
 
                 // Remove labels
@@ -57,7 +57,7 @@ jobs:
             });
             
       - name: Remove label
-        if: ${{ steps.check_employee.outputs.result == 'false' && steps.check_labels.outputs.returnValue == true }}
+        if: ${{ steps.check_employee.outputs.result == 'true' && steps.check_labels.outputs.returnValue == true }}
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
