@@ -38,18 +38,19 @@ jobs:
         if: ${{ steps.check_employee.outputs.result == 'false' }}
         uses: actions/github-script@v6
         with:
-          cosnt labels = [
-            'fixed',
-            'more information needed',
-            'in backlog'
-          ];
+          script: |
+            cosnt labels = [
+              'fixed',
+              'more information needed',
+              'in backlog'
+            ];
 
-          console.log(context.payload);
+            console.log(context.payload);
 
-          labels.forEach(label => {
-            if (context.payload.label.name === label) {
-              return true;
+            labels.forEach(label => {
+              if (context.payload.label.name === label) {
+                return true;
 
-              // Remove labels
-            }
-          });
+                // Remove labels
+              }
+            });
