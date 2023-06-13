@@ -35,18 +35,19 @@ jobs:
               return 'false';
             }
       
-      - name: Fetch label ids
-        id: fetch_label_ids
+      - name: Fetch label id
+        id: fetch_label_id
         if: ${{ steps.check_employee.outputs.result == 'true' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
+          TOPIC: 'fixed'
         run: |
-          gh api graphql -F owner=$OWNER -F name=$REPO -f query='
-            query($owner: String!, $name: String!, $labels: [String!]!) {
+          gh api graphql -F owner=$OWNER -F name=$REPO -F topic="$TOPIC"  -f query='
+            query($owner: String!, $name: String!, $topic: String) {
               repository(owner: $owner, name: $name){
-                labels(first: 3, query: $labels) {
+                labels(first: 1, query: $topic) {
                   edges {
                     node {
                       id
@@ -55,9 +56,9 @@ jobs:
                   }
                 }
               }
-            }' -f labels="more information needed,fixed,in backlog" > repository_label_data.json
+            }' > repository_label_data.json
             
-          echo 'LABEL_IDS='$(jq '.data.repository.labels.edges[].node.id' repository_label_data.json) >> $GITHUB_ENV
+          echo 'LABEL_ID='$(jq '.data.repository.labels.edges[].node | .id ' repository_label_data.json) >> $GITHUB_ENV
           
       - name: Fetch discussion ID
         id: fetch_discussion_id
@@ -66,6 +67,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
+          TOPIC: 'fixed'
         run: |
           gh api graphql -F owner=$OWNER -F name=$REPO -f query='
             query($owner: String!, $name: String!) {
@@ -82,8 +84,9 @@ jobs:
       - name: Unlabel the discussion
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DISCUSSION_ID: ${{ env.DISCUSSION_ID }}
-          LABEL_IDS: ${{ env.LABEL_IDS }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          TOPIC: 'fixed'
         run: |
           gh api graphql -f query='
             mutation($labelableId: ID!, $labelIds: [ID!]!) {
@@ -99,4 +102,4 @@ jobs:
                   }
                 }
               }
-            }' -f labelableId=$DISCUSSION_ID -f labelIds=$LABEL_IDS
+            }' -f labelableId=$DISCUSSION_ID -f labelIds=$LABEL_ID
