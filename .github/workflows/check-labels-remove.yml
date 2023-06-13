@@ -88,18 +88,21 @@ jobs:
           REPO: ${{ github.event.repository.name }}
           TOPIC: 'fixed,more information needed,in backlog'
         run: |
-          gh api graphql -f query='
-            mutation($labelableId: ID!, $labelIds: [ID!]!) {
-              removeLabelsFromLabelable(input: {labelableId: $labelableId, labelIds: $labelIds}) {
-                labelable {
-                  labels(first: 10) {
-                    edges {
-                      node {
-                        id
-                        name
+          LABEL_IDS=($LABEL_IDS)
+          for label_id in "${LABEL_IDS[@]}"; do
+            gh api graphql -f query='
+              mutation($labelableId: ID!, $labelId: ID!) {
+                removeLabelFromLabelable(input: {labelableId: $labelableId, labelId: $labelId}) {
+                  labelable {
+                    labels(first: 10) {
+                      edges {
+                        node {
+                          id
+                          name
+                        }
                       }
                     }
                   }
                 }
-              }
-            }' -f labelableId=$DISCUSSION_ID -f labelIds=$LABEL_ID
+              }' -f labelableId=$DISCUSSION_ID -f labelId=$label_id
+          done
