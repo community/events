@@ -2,7 +2,7 @@ name: 'Label Actions'
 
 on:
   discussion:
-    types: [labeled, created]
+    types: [created]
 
 permissions:
   contents: read
