@@ -1,13 +1,17 @@
 # Configuration for Label Actions - remove label id
 
-more information needed, in backlog, fixed:
-  # Post a comment
-  comment: >
-    :wave: Hi there! It looks like you added a label to this discussion that is reserved for GitHub staff. I've removed this label.
-    Beep boop, I am a
+more information needed:
   discussions:
     # Remove labels
     unlabel:
       - 'more information needed'
-      - 'fixed'
+
+in backlog:
+  discussions:
+    unlabel:
       - 'in backlog'
+
+fixed:
+  discussions:
+    unlabel:
+      - 'fixed'
