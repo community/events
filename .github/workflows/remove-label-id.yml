@@ -41,4 +41,4 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           config-path: '.github/label-actions.yml'
-          process-only: ''
+          process-only: 'discussions'
