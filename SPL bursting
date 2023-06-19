@@ -1,0 +1,138 @@
+DNS records and worldwide DNS propagation checker
+
+IP Pinger - Ping IPv4 Address Online
+Enter Domain or IPv4 Address:
+WhatsApp.com
+Use any IP / Domain or Your IP
+
+Related tools
+Ping IPv6 IPv4 to IPv6 IP to Location Online Traceroute
+More Tools
+Port Checker
+MAC Address Lookup
+MAC Address Generator
+DMARC Validation Tool
+Resolve IP to Hostname
+IP WHOIS Lookup
+Show More
+All Tools
+Ping Result for IP: 157.240.241.60
+Connected To	Response Time	TTL	No of Bytes
+157.240.241.60	2.24 ms	56	64
+157.240.241.60	1.74 ms	56	64
+157.240.241.60	1.17 ms	56	64
+157.240.241.60	1.27 ms	56	64
+157.240.241.60	1.21 ms	56	64
+Packet Summary
+Sent	Received	Loss	Time
+5	5	0%	4006 ms
+Latency Summary
+Min	Max	Avg	StdDev
+1.173	2.242	1.529	0.413
+IP Pinger - Ping IPv4 Address Online
+Ping utility helps to check if the destination IP is assigned to some device and responding respectively. Just put an IPv4 address to ping it online.
+
+What is IPv4?
+IPv4 (Internet Protocol Version 4) is the most widely used form of an IP address. The IPv4 addresses are 32-bits long and use DNS A records to map the hostname to an IP address.
+
+The IPv4 was the first kind of IP created in networking. They are short in number, and the maximum available to be ever assigned to devices is 4,294,967,296.
+
+What is Ping?
+In a computer network, the data is sent in small blocks called packets. Each packet is transmitted individually and may adopt a different route to reach its destination.
+
+Once all the packets of the original message reach the destination. All packets are re-assembled to form the original message. But sometimes, due to some hurdles, like network congestion, the webserver being down, or some other technical error, there are chances that the message will not reach the destination.
+
+We use two standard programs, Ping and Traceroute online, to diagnose obstructions, network failures, or technical errors.
+
+Ping (Packet InterNet Groper) is a computer network administration utility that helps one to check whether a particular IP address or domain is accessible on the computer network or not. Ping works by sending a packet to a provided address and waiting for the reply. It also measures round trip time and reports errors.
+
+The Ping tool uses the Internet Control Message Protocol (ICMP) Echo function detailed in RFC792. A small packet will be sent to the given IPv4 address. The packet contains 64 bytes, 56 data bytes, and 8 bytes of protocol reader information.
+
+Ping works by sending ICMP "echo request" (ping) packets to the target host and listening for ICMP "echo response" (pong) replies. Per RFC1122, "Requirements for Internet Hosts," each host must send an echo reply when pinged.
+
+However, that may not always be the scenario. Sometimes, the firewall blocks the echo request to prevent distributed denial of service (DDoS) attacks, reduce the host's visibility, or even by mistake.
+
+But publicly accessible IP addresses like 8.8.8.8 DNS Server always respond. Google does not bother if you ping their DNS servers. Pinging Google or other global DNS servers is fine.
+
+What is the primary reason to ping an IP address?
+A ping test checks whether the device or host is connected or accessible on the network. The test checks whether the host or the provided URL is online or offline and checks the delay between two computers. The Ping service sends several ICMP packets to an IP or domain and returns the detailed output. It also tells how many packets were transmitted and how many were lost during that ping activity.
+
+Several internet speed test tools also display the ping results. A good internet speed test tool tries to create connections with multiple servers. However, the server with the lowest connection time runs the internet speed test.
+
+How to use the online ping tool to ping IPv4?
+The IPv4 ping tool is similar to the ping IPv6 address tool. But it allows you to ping the IPv4 host.
+
+To perform an IPv4 ping test, complete the following steps.
+
+Open Online Ping IPv4 Address
+Enter the domain or IPv4 address, and click the "Ping IPv4" button.
+The tool pings the provided domain or IP address and gives the result.
+The result will help you in several ways.
+
+If there is no data loss, the provided connection is secure, and the IP is online.
+The equipped device or host suffers from unreliable connections if data is lost.
+Suppose a request "timed out" means that the pinged IP address is either wrong or nonexistent. Or maybe the IP is offline, or host settings are stopping it from giving a response on ping requests.
+Suppose you provide an invalid domain or IP address; then the response would be unpredictable. You may get an error message "Couldn't resolve a hostname."
+Note: Online Ping tool uses the Network Tools' infrastructure to run a ping test. You cannot utilize that tool to test internal addresses on your local network. Therefore, you need a local ping tool to check the availability of resources on your local network.
+
+FAQs
+Is it illegal to ping an IP address?
+Pinging an IP address is not illegal. An IP address is much like a piece of public information, but any abuse of IP address information is prohibited. To overcome that issue, it's better to hide your IP by using VPN. After connecting to VPN, it's better to check your IP by, what is my IP and its location using the IP address location tool.
+
+What's a good ping?
+A good and acceptable ping is about a 40ms-60ms mark or lower. However, if that goes over 100ms, that is a significant delay, and at around 170ms, the games will refuse your connection entirely. If you have a 10ms ping (0.01 seconds), your gameplay will be faster and smoother than playing with a 100ms ping time.
+
+But it depends on the game you are playing. Some games, like Hearthstone, may not require a low ping. Other games like Counter-Strike and Street Fighter V require precise inputs and timing.
+
+Would you be looking for more IP tools on DNS Checker? Why do not you try our IPv6 Ping Test, Check IP Blacklist, and Traceroute Test? All the IP tools are top-notch and free!
+
+DNS CHECK TOOLS
+DNS Checker
+Complete DNS Health Report
+Reverse IP Lookup
+DNS Lookup
+NS Lookup
+MX Lookup
+PRODUCTIVITY
+Binary Translator
+Reverse Image Search
+Credit Card Generator
+CC Checker
+Notepad Online
+MORE TOOLS
+QR Code Scanner
+Time Card Calculator
+Morse Code Translator
+Image to Text
+Social Media Name Checker
+DNS SERVER DATABASE
+Global DNS Providers
+Australian DNS Servers
+United Kingdom DNS Servers
+United States DNS Servers
+DEVELOPER TOOLS
+Password Generator
+Check HTTP Headers
+Check Website OS
+Page rank Checker
+NETWORK TOOLS
+Port Checker
+MAC Address Lookup
+ASN WHOIS Lookup
+EMAIL TOOLS
+SMTP Test
+Trace Email
+SPF Checker
+IP TOOLS
+What is my IP
+IP Location Lookup
+IP Blacklist Check
+IP WHOIS Lookup
+MOBILE APPS
+Get it on Google Play
+BROWSER ADD-ONS
+Get Chrome Extension
+DNS Checker
+Copyright © DNSChecker.org, All Rights Reserved.
+Contact us
+Privacy
