@@ -34,6 +34,27 @@ jobs:
               console.log(error);
               return 'false';
             }
+
+      - name: Fetch discussion ID
+        id: fetch_discussion_id
+        if: ${{ steps.check_employee.outputs.result == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          TOPIC: 'fixed'
+        run: |
+          gh api graphql -F owner=$OWNER -F name=$REPO -f query='
+            query($owner: String!, $name: String!) {
+              repository(owner: $owner, name: $name) {
+                discussion(number: ${{ github.event.discussion.number }}) {
+                  id
+                }
+              }
+            }' > discussion_data.json
+            
+          echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
+            
       
       - name : Label Actions
         if: ${{ steps.check_employee.outputs.result == 'true' }}
