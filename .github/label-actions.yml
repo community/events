@@ -7,7 +7,7 @@ more information needed:
     Beep boop, I am a
   discussions:
     # Remove labels
-    label:
+    unlabel:
       - 'more information needed'
       - 'fixed'
       - 'in backlog'
