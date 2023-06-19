@@ -54,7 +54,7 @@ jobs:
             
           echo 'DISCUSSION_ID='$(jq '.data.repository.discussion.id' discussion_data.json) >> $GITHUB_ENV
 
-      - name : Label Actions
+      - name: Label Actions
         if: ${{ steps.check_employee.outputs.result == 'true' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -63,4 +63,3 @@ jobs:
           config-path: '.github/label-actions.yml'
           process-only: 'discussions'
         uses: dessant/label-actions@v3
-
