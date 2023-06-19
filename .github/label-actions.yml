@@ -1,6 +1,6 @@
 # Configuration for Label Actions - remove label id
 
-more information needed:
+more information needed, in backlog, fixed:
   # Post a comment
   comment: >
     :wave: Hi there! It looks like you added a label to this discussion that is reserved for GitHub staff. I've removed this label.
