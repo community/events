@@ -2,7 +2,7 @@ name: Remove Governed Labels
 
 on:
   discussion:
-    types: [labeled, created]
+    types: [created]
 
 jobs:
   check_labels:
